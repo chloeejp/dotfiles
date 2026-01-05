@@ -1,0 +1,54 @@
+[begin] (FluxBox)
+    [submenu] (Development)
+        [exec] (IDLE [Python IDE]) {idle}
+        [exec] (Python) {kitty python}
+    [end]
+    [submenu] (Editors)
+        [exec] (Emacs) {kitty emacs}
+        [exec] (Neovim) {kitty nvim}
+    [end]
+    [submenu] (Graphics)
+        [exec] (Flameshot) {flameshot}
+    [end]
+    [submenu] (Multimedia)
+        [exec] (ALSA mixer) {kitty alsamixer}
+        [exec] (Qt V4L2 test Utility) {qv4l2}
+        [exec] (Qt V4L2 video capture utility) {qvidcap}
+        [exec] (Volume Control) {pavucontrol}
+    [end]
+    [submenu] (Network)
+        [exec] (Avahi SSH Server Browser) {bssh}
+        [exec] (Avahi VNC Server Browser) {bvnc}
+        [exec] (FireFox) {firefox}
+        [exec] (LocalSend) {localsend}
+        [exec] (TkVNC) {kitty tkvnc}
+        [exec] (Vesktop) {vesktop}
+    [end]
+    [submenu] (Shells)
+        [exec] (Files) {nautilus}
+        [exec] (kitty) {kitty}
+        [exec] (ranger) {kitty ranger}
+    [end]
+    [submenu] (System)
+        [exec] (Avahi Zeroconf Browser) {avahi-discover}
+        [exec] (btop++) {kitty btop}
+        [exec] (pstree) {kitty pstree}
+    [end]
+    [submenu] (Utilities)
+        [exec] (Picom) {picom}
+        [exec] (Redshift) {redshift-gtk}
+    [end]
+    [separator]
+    [submenu] (FluxBox)
+        [workspaces] (Workspaces)
+        [submenu] (Styles)
+            [stylesdir] (/usr/share/fluxbox/styles)
+            [stylesdir] (~/.fluxbox/styles)
+        [end]
+        [config] (Configure)
+        [reconfig] (Reconfig)
+        [restart] (Restart)
+        [separator]
+        [exit] (Exit)
+    [end]
+[end]

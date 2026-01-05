@@ -1,0 +1,87 @@
+# click on the desktop to get menus
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+
+# scroll on the desktop to change workspaces
+OnDesktop Mouse4 :PrevWorkspace
+OnDesktop Mouse5 :NextWorkspace
+
+# scroll on the toolbar to change current window
+OnToolbar Mouse4 :PrevWindow {static groups} (iconhidden=no)
+OnToolbar Mouse5 :NextWindow {static groups} (iconhidden=no)
+
+# supa + left/right click to move/resize a window
+OnWindow Mod4 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindowBorder Move1 :StartMoving
+
+OnWindow Mod4 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+
+# control-click a window's titlebar and drag to attach windows
+OnTitlebar Control Mouse1 :StartTabbing
+
+# double click on the titlebar to shade
+OnTitlebar Double Mouse1 :Shade
+
+# left click on the titlebar to move the window
+OnTitlebar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
+OnTitlebar Move1  :StartMoving
+
+
+# right click on the titlebar for a menu of options
+OnTitlebar Mouse3 :WindowMenu
+
+# supa-tab
+Mod4 Tab :NextWindow {groups} (workspace=[current])
+
+
+# open a terminal
+Mod4 T :Exec kitty
+# open a dialog to run programs
+Mod4 space :Exec fbrun
+# open file manager
+Mod4 N :Exec nautilus 
+# Screenshot
+Print :Exec flameshot gui
+# volume settings, using common keycodes
+# if these don't work, use xev to find out your real keycodes
+122 :Exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+123 :Exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+121 :Exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# current window commands
+Mod4 C :Close
+Mod4 Q :Kill
+Mod4 Shift M :Minimize
+Mod4 M :Maximize
+Mod4 F11 :Fullscreen
+
+# exit fluxbox
+Mod4 Shift Escape :Exit
+
+# change to previous/next workspace
+Mod4 Left :PrevWorkspace
+Mod4 Right :NextWorkspace
+
+# send the current window to previous/next workspace
+Mod4 Shift Left :SendToPrevWorkspace
+Mod4 Shift Right :SendToNextWorkspace
+
+# send the current window and follow it to previous/next workspace
+Mod4 Control Left :TakeToPrevWorkspace
+Mod4 Control Right :TakeToNextWorkspace
+
+# change to a specific workspace
+Mod4 1 :Workspace 1
+Mod4 2 :Workspace 2
+Mod4 3 :Workspace 3
+Mod4 4 :Workspace 4
+
+# send the current window to a specific workspace
+Mod4 Shift 1 :SendToWorkspace 1
+Mod4 Shift 2 :SendToWorkspace 2
+Mod4 Shift 3 :SendToWorkspace 3
+Mod4 Shift 4 :SendToWorkspace 4
+
