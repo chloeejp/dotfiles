@@ -11,6 +11,7 @@ alias suspend='i3lock -c 000000 && systemctl suspend'
 alias cl='clear'
 alias fm='ranger'
 alias nightlight='redshift.sh'
+
 # Exports
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR=nvim
